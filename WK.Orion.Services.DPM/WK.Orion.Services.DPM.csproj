@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64113DD2-F068-49CC-8096-ECEE10532BCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WK.Orion.Services.DPM</RootNamespace>
+    <AssemblyName>WK.Orion.Services.DPM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.AggregateService, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.AggregateService.4.0.0\lib\net45\Autofac.Extras.AggregateService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.Attributed, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.Attributed.3.3.0\lib\net40\Autofac.Extras.Attributed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy2, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.DynamicProxy2.3.0.7\lib\net40\Autofac.Extras.DynamicProxy2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.Multitenant, Version=3.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.Multitenant.3.1.1\lib\net40\Autofac.Extras.Multitenant.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mef, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mef.3.0.3\lib\net40\Autofac.Integration.Mef.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\Interfaces\IDocumentProcessingService.cs" />
+    <Compile Include="BusinessLogic\Services\DocumentProcessingService.cs" />
+    <Compile Include="Infrastructure\Bootstrapper.cs" />
+    <Compile Include="OrionContainerBuilder.cs" />
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clients\src\WK.Orion.Platform.Clients.BusinessLogicLayer\WK.Orion.Platform.Clients.BusinessLogicLayer.csproj">
+      <Project>{d5a4cc7f-dcfd-4196-9f2a-138169838d19}</Project>
+      <Name>WK.Orion.Platform.Clients.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clients\src\WK.Orion.Platform.Clients.ServiceLayer.DotNetApi\WK.Orion.Platform.Clients.csproj">
+      <Project>{fee98002-03e0-412d-813d-3c572e488db0}</Project>
+      <Name>WK.Orion.Platform.Clients</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tasks\src\WK.Orion.Platform.Tasks.BusinessLogicLayer\WK.Orion.Platform.Tasks.BusinessLogicLayer.csproj">
+      <Project>{c83ed111-3703-4f46-808b-26241deb6974}</Project>
+      <Name>WK.Orion.Platform.Tasks.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tasks\src\WK.Orion.Platform.Tasks\WK.Orion.Platform.Tasks.csproj">
+      <Project>{ab04e4fe-42b4-4095-a061-d875146e777b}</Project>
+      <Name>WK.Orion.Platform.Tasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\userdefinedfields\src\WK.Orion.Platform.UserDefinedFields.BusinessLogicLayer\WK.Orion.Platform.UserDefinedFields.BusinessLogicLayer.csproj">
+      <Project>{13178a29-aa3d-4e6a-9c4f-6f39fdcb732e}</Project>
+      <Name>WK.Orion.Platform.UserDefinedFields.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\userdefinedfields\src\WK.Orion.Platform.UserDefinedFields\WK.Orion.Platform.UserDefinedFields.csproj">
+      <Project>{0c1da232-08a9-42e4-be8a-fdaa4e702e1c}</Project>
+      <Name>WK.Orion.Platform.UserDefinedFields</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WK.Orion.Platform.Framework\WK.Orion.Platform.Framework.csproj">
+      <Project>{C971DDCF-6D2F-47EB-8C9B-08724736AB72}</Project>
+      <Name>WK.Orion.Platform.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WK.Orion.Platform.Infrastructure.DependencyResolver\WK.Orion.Platform.Infrastructure.DependencyResolver.csproj">
+      <Project>{DD3A2DBD-025D-4A02-821D-FA4648300E22}</Project>
+      <Name>WK.Orion.Platform.Infrastructure.DependencyResolver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
